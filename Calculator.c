@@ -1,114 +1,138 @@
 #include <stdio.h>
 
- double addition(double num1, double num2) {
+
+void addition(){
+  double a, b;
   printf("Enter the first number: ");
-  scanf("%lf", &num1);
+  scanf("%lf",&a);
   printf("Enter the second number: ");
-  scanf("%lf", &num2);
-  printf("%.1lf + %.1lf = %.1lf\n", num1, num2, num1 + num2);
-  return num1 + num2;
+  scanf("%lf",&b);
+
+  printf("Result: %.1lf + %.1lf = %.1lf\n", a, b, a + b);
+
 }
 
-double subtraction(double num1, double num2) {
+void subtraction(){
+  double a, b;
   printf("Enter the first number: ");
-  scanf("%lf", &num1);
+  scanf("%lf",&a);
   printf("Enter the second number: ");
-  scanf("%lf", &num2);
-  printf("%.1lf - %.1lf = %.1lf\n", num1, num2, num1 - num2);
-  return num1 - num2;
+  scanf("%lf",&b);
+
+  printf("Result: %.1lf - %.1lf = %.1lf\n", a, b, a - b);
+
 }
 
-double multiplication(double num1, double num2) {
+void multiplication(){
+  double a, b;
   printf("Enter the first number: ");
-  scanf("%lf", &num1);
+  scanf("%lf",&a);
   printf("Enter the second number: ");
-  scanf("%lf", &num2);
-  printf("%.1lf * %.1lf = %.1lf\n", num1, num2, num1 * num2);
-  return num1 * num2;
+  scanf("%lf",&b);
+
+  printf("Result: %.1lf * %.1lf = %.1lf\n", a, b, a * b);
+
 }
 
-double division(double num1, double num2) {
+void division(){
+  double a, b;
   printf("Enter the first number: ");
-  scanf("%lf", &num1);
+  scanf("%lf",&a);
   printf("Enter the second number: ");
-  scanf("%lf", &num2);
-  if (num2 != 0) {
-    printf("%.1lf / %.1lf = %.1lf\n", num1, num2, num1 / num2);
-    return num1 / num2;
-  } else {
-    printf("Error: Division by zero is not allowed.\n");
-    return 0;
-  }
-}
-
-int main() {
-  int choice;
-  int menu = 1;
-  int programa_rodando = 1;
-  
-  while (programa_rodando)
-  {
-  
-  printf("===============================\n");
-  printf("   Simple Calculator\n");
-  printf("===============================\n");
-  while (menu) {
-  printf("Select an operation:\n");
-  printf("1. Addition\n");
-  printf("2. Subtraction\n");
-  printf("3. Multiplication\n");
-  printf("4. Division\n");
-  printf("5. Exit\n");
-  printf("Option: ");
-  scanf("%d", &choice);
-
-  switch (choice) {
-    case 1:
-      printf("You chose Addition.\n");
-      double num1, num2;
-      addition(num1, num2);
-      menu = 0;
-      break;
-    case 2:
-      printf("You chose Subtraction.\n");
-      subtraction(num1, num2);
-      menu = 0;
-      break;
-    case 3:
-      printf("You chose Multiplication.\n");
-      multiplication(num1, num2);
-      menu = 0;
-      break;
-    case 4:
-      printf("You chose Division.\n");
-      division(num1, num2);
-      menu = 0;
-      break;
-    case 5:
-      printf("Thank you for using the calculator! See you next time.\n");
-      menu = 0;
-      programa_rodando = 0;
-      break;
-    default:
-      printf("Invalid option. Please try again.\n");
-  }
-  }
-  if (programa_rodando == 1)
-  {
-  char l;
-  printf("Do you want to perform another operation? (y/n): ");
-  scanf(" %c", &l);
-  if (l == 'y')
-  {
-    menu = 1;
-  }else if (l == 'n')
-  {
-    printf("Thank you for using the calculator! See you next time.\n");
-    programa_rodando = 0;
+  scanf("%lf",&b);
+  if (b != 0){
+    printf("Result: %.1lf / %.1lf = %.1lf\n", a, b, a/b);
   }else{
-    printf("Invalid response. Please type 'y' for yes or 'n' for no.\n");
+    printf("Error: Division by zero is not allowed.\n");
   }
-  }
+  
+
 }
+
+int main(){
+  int choice;
+  int program_running = 1;
+  while (program_running)
+  {
+    printf("===============================\n");
+    printf("   Simple Calculator\n");
+    printf("===============================\n");
+
+    int menu = 1;
+    
+    while (menu)
+    {
+      printf("Select an operation:\n");
+      printf("1. Addition\n");
+      printf("2. Subtraction\n");
+      printf("3. Multiplication\n");
+      printf("4. Division\n");
+      printf("5. Exit\n");
+      printf("Option: ");
+
+      if (scanf("%d", &choice) != 1) 
+      {
+        while (getchar() != '\n');
+        choice = 0;
+      }
+      switch (choice)
+      {
+      case 1:
+        printf("You choose Addition\n");
+        addition();
+        menu = 0;
+        break;
+
+      case 2:
+        printf("You choose Subtraction\n");
+        subtraction();
+        menu = 0;
+        break;
+
+      case 3:
+        printf("You choose Multiplication\n");
+        multiplication();
+        menu = 0;
+        break;
+
+      case 4:
+        printf("You choose Division\n");
+        division();
+        menu = 0;
+        break;
+      
+      case 5:
+        printf("Thank you for using the calculator! See you next time.\n");
+        program_running = 0;
+        menu = 0;
+        break;
+      
+      default:
+        printf("Number of the range of 1-5\n");
+        break;
+
+      }
+    }
+    if (program_running == 1)
+    {
+      char l;
+      int validation = 0;
+      while (!validation)
+      {
+        printf("Do you want to perform another operation? (y/n): ");
+        scanf(" %c",&l);
+
+        if (l == 'y' || l == 'Y')
+        {
+          validation = 1;
+        }else if (l == 'n' || l == 'N'){
+          validation = 1;
+          program_running = 0;
+        }else{
+          printf("Invalid response. Please type 'y' for yes or 'n' for no.\n");
+        }
+      }
+    }
+  }
   return 0;
 }
