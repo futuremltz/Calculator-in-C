@@ -1,0 +1,19 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compilar
+        run: gcc -Wall -Wextra Calculator.c -o calculator
+
+      - name: Teste rápido (abrir e sair)
+        run: printf '5\n' | ./calculator | grep "Thank you"

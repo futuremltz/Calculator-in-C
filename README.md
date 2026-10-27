@@ -1,5 +1,10 @@
 # 🧮 Calculator in C
 
+<p>
+  <a href="https://github.com/futuremltz/Calculator-in-C/actions/workflows/build.yml"><img src="https://github.com/futuremltz/Calculator-in-C/actions/workflows/build.yml/badge.svg" alt="Build" /></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/licen%C3%A7a-MIT-blue.svg" alt="Licença MIT" /></a>
+</p>
+
 O **Calculator.c** é uma aplicação de Interface de Linha de Comando (CLI) desenvolvida em C que realiza operações aritméticas fundamentais. Este projeto serve como uma implementação prática de programação modular, gerenciamento de fluxo de controle e operações padrão de entrada/saída (I/O).
 
 ## 🎬 Demonstração
