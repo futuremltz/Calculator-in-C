@@ -2,6 +2,12 @@
 
 O **Calculator.c** é uma aplicação de Interface de Linha de Comando (CLI) desenvolvida em C que realiza operações aritméticas fundamentais. Este projeto serve como uma implementação prática de programação modular, gerenciamento de fluxo de controle e operações padrão de entrada/saída (I/O).
 
+## 🎬 Demonstração
+
+<p align="center">
+  <img src="assets/demo.gif" alt="Calculadora fazendo uma multiplicação e tratando divisão por zero" />
+</p>
+
 ## 🚀 Funcionalidades
 
 - **Operações Aritméticas:** Suporta operações de adição, subtração, multiplicação e divisão.
